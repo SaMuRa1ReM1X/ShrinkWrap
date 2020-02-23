@@ -1,0 +1,1 @@
+sam package --s3-bucket cloudapp-lambda-bucket --template-file sam_template.yaml --output-template-file packaged.yaml && sam deploy --s3-bucket cloudapp-lambda-bucket --stack-name lamdba-stack --capabilities CAPABILITY_IAM --template-file packaged.yaml

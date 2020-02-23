@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+Resources:
+  GetLastAccessedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: GetLastAccessedFunction-Lambda
+      Layers:
+        - !Sub arn:aws:lambda:us-west-2:132865025212:layer:LambdaDependencyLayer:1   
+      CodeUri: src
+      Handler: app.lambda_handler
+      Runtime: python3.6
+      MemorySize: 128
+      Timeout: 300
